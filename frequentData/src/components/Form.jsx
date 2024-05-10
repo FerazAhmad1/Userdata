@@ -55,7 +55,9 @@ const Form = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get("http://localhost:3000/api/v1/country");
+      const response = await axios.get(
+        "https://apifrequent.onrender.com/api/v1/country"
+      );
       const data = await response.data.data;
 
       setAllCountry(data);
@@ -66,7 +68,7 @@ const Form = () => {
   useEffect(() => {
     const fetchstate = async () => {
       const response = await axios.get(
-        `http://localhost:3000/api/v1/state/${country}`
+        `https://apifrequent.onrender.com/api/v1/state/${country}`
       );
       console.log(response.data);
       const data = response.data.data.states;
@@ -78,7 +80,7 @@ const Form = () => {
   useEffect(() => {
     const fetchCities = async () => {
       const response = await axios.get(
-        `http://localhost:3000/api/v1/city/${state}`
+        `https://apifrequent.onrender.com/api/v1/city/${state}`
       );
       setAllCity(response.data.data.cities);
     };
@@ -88,17 +90,20 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormDirty(true);
-    const response = await axios.post(`http://localhost:3000/api/v1/user`, {
-      firstName,
-      lastName,
-      email,
-      dob,
-      age,
-      country,
-      state,
-      city,
-      gender,
-    });
+    const response = await axios.post(
+      `https://apifrequent.onrender.com/api/v1/user`,
+      {
+        firstName,
+        lastName,
+        email,
+        dob,
+        age,
+        country,
+        state,
+        city,
+        gender,
+      }
+    );
     console.log(response);
     // Handle form submission logic
   };
