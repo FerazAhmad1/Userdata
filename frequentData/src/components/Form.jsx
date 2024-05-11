@@ -8,12 +8,7 @@ import { CustomRadioButton } from "./CustomRadioButton";
 import { genderOptions, regex } from "../constants";
 import { DateInput } from "./DateInput";
 
-import {
-  calculateAge,
-  getCities,
-  getCountryOptions,
-  getStates,
-} from "../utils";
+import { calculateAge } from "../utils";
 import axios from "axios";
 
 const calculateMinDate = () => {
